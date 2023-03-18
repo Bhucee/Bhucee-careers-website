@@ -11,19 +11,26 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
     {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://bhucee-careers-website.bhucee.repl.co/static/banner.jpeg" height="320">
     <div class="container">
     <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-    <img class="img-fluid" id="banner" src="https://bhucee-careers-website.bhucee.repl.co/static/banner.jpeg" height="320">
-    <h2 class="text-center mt-4 mb-4">About Bhucee</h2>
-    <p class="lead">
+    <div class="row" syle="margin-bototm:16px;">
+      <div class="col-md-6">
+    <p>
       What is Lorem Ipsum?
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </p>
+      </div>
+      <div class="d-none d-md-block col-md-6">
+      <img src="/static/people.jpeg" style="height:320px; border-radius:4px">
+      </div>
+    </div>
     <h2 class="text-center mt-2 mb-4">Job Openings</h2>
     <div>
       {% for job in jobs %}
@@ -31,9 +38,10 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
       {% endfor %}
     </div>
       <div class="text-center mt-4">
-    <button class="class="class="btn primary btn-lg">Contact Us</button>
-        <p class="text-center mt-2">copyright, 2023, Bhucee</p>
+    <a  class="class="class="btn primary btn-lg" href="mailto:info@iowa-solutions.com?subject=Questions%20about%20Job%20Openings&body=my%20name%3A%20%3CPut%20you%20Name%20here%3E%0D%0A%0D%0AQuestions%20Here%3A%20%3CEnter%20your%20questions%20here%3E">Contact Us</a>
+        
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
